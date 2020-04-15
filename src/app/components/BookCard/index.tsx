@@ -1,23 +1,11 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './styles';
+import {Book} from 'src/app/interfaces/book';
+import default_img from './assets/img_book1.png';
 
-interface Props {
-  book: {
-    id: number;
-    author: string;
-    title: string;
-    genre: string;
-    publisher: string;
-    year: string;
-    image_url: string;
-  };
-}
-
-const BookCard = ({book}: Props) => {
-  let source = book.image_url
-    ? {uri: book.image_url}
-    : require('./assets/img_book1.png');
+function BookCard({book}: Book) {
+  const source = book.image_url ? {uri: book.image_url} : default_img;
 
   return (
     <View style={styles.card}>
@@ -32,6 +20,6 @@ const BookCard = ({book}: Props) => {
       </View>
     </View>
   );
-};
+}
 
 export default BookCard;

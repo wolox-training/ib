@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
+import {tundora, white} from './../../../constants/colors';
 
 export default StyleSheet.create({
   card: {
     alignItems: 'flex-start',
-    backgroundColor: 'white',
+    backgroundColor: white,
     borderRadius: 5,
     flexDirection: 'row',
     height: 90,
@@ -27,7 +28,7 @@ export default StyleSheet.create({
     overflow: 'hidden',
   },
   subtitle: {
-    color: '#4A4A4A',
+    color: tundora,
     fontSize: 15,
   },
 });
