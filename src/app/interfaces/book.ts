@@ -1,5 +1,6 @@
-export interface Book {
+export interface BookProps {
   book: BookData;
+  onClick: () => void;
 }
 
 export interface BookData {
@@ -9,5 +10,5 @@ export interface BookData {
   genre: string;
   publisher: string;
   year: string;
-  image_url: string;
+  imageUrl: string;
 }

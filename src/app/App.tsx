@@ -1,28 +1,20 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StatusBar, View, FlatList} from 'react-native';
-import BookCard from './components/BookCard';
-import styles from './styles';
-import {BookData} from './interfaces/book';
-import Data from '../../assets/Books.json'
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Books from './screens/Books';
+import BookDetail from './screens/BookDetail';
+
+const Stack = createStackNavigator();
 
 const App = () => {
-  const renderItem = (book: BookData) => <BookCard book={book} />;
-  const renderSeparator = () => <View style={styles.bookCardSeparator} />;
-
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <View style={styles.mainContainer}>
-          <FlatList
-            data={Data}
-            renderItem={({item}) => renderItem(item)}
-            keyExtractor={(item) => item.id}
-            ItemSeparatorComponent={() => renderSeparator()}
-          />
-        </View>
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Books">
+        <Stack.Screen name="Books" component={Books} />
+        <Stack.Screen name="Book Details" component={BookDetail} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
