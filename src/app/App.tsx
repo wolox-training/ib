@@ -3,8 +3,7 @@ import {SafeAreaView, StatusBar, View, FlatList} from 'react-native';
 import BookCard from './components/BookCard';
 import styles from './styles';
 import {BookData} from './interfaces/book';
-
-const DATA = require('../../assets/Books.json');
+import Data from '../../assets/Books.json'
 
 const App = () => {
   const renderItem = (book: BookData) => <BookCard book={book} />;
@@ -16,7 +15,7 @@ const App = () => {
       <SafeAreaView>
         <View style={styles.mainContainer}>
           <FlatList
-            data={DATA}
+            data={Data}
             renderItem={({item}) => renderItem(item)}
             keyExtractor={(item) => item.id}
             ItemSeparatorComponent={() => renderSeparator()}
