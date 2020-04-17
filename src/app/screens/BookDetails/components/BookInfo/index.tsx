@@ -7,7 +7,7 @@ import SecondaryButton from 'src/app/components/SecondaryButton';
 import Spacer from 'src/app/components/Spacer';
 import defaultImg from './assets/img_book1.png';
 
-const BookInfo = ({book}: BookProps) => {
+function BookInfo({book}: BookProps) {
   const source = book.image_url ? {uri: book.image_url} : defaultImg;
 
   return (

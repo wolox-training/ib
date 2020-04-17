@@ -4,7 +4,7 @@ import BookCard from '../../components/BookCard';
 import styles from './styles';
 import Data from '../../../../assets/Books.json'
 
-const Books = ({navigation}: any) => {
+function Books({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: any) =><BookCard book={item} navigation={navigation}/>;
   const setId = (item: { id: string; }) => item.id;

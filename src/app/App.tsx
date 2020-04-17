@@ -7,7 +7,7 @@ import BookDetails from './screens/BookDetails';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Books">

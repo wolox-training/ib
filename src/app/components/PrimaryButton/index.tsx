@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
 
-const PrimaryButton = ({active = false}) => {
+function PrimaryButton({active = false}){
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.text}>ADD TO WISHLIST</Text>
