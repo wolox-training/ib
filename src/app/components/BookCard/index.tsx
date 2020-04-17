@@ -1,14 +1,15 @@
 import React from 'react';
 import {View, Text, Image, TouchableHighlight} from 'react-native';
-import {BookProps} from 'src/app/interfaces/book';
+import {BookCardProps} from 'src/app/interfaces/bookCard';
 import styles from './styles';
 import defaultImg from './assets/img_book1.png';
 
-function BookCard({book, onClick}: BookProps) {
-  const source = book.imageUrl ? {uri: book.imageUrl} : defaultImg;
+function BookCard({book, navigation}: BookCardProps) {
+  const handleClick = () => navigation.navigate('Book Details', {book: book});
+  const source = book.image_url ? {uri: book.image_url} : defaultImg;
 
   return (
-    <TouchableHighlight onPress={onClick}>
+    <TouchableHighlight onPress={handleClick}>
       <View style={styles.card}>
         <Image style={styles.cardImage} source={source} />
         <View style={styles.titleContainer}>
