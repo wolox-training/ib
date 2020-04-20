@@ -6,4 +6,4 @@ export const tundora = '#4A4A4A';
 export const turquoise = '#39CCCD';
 export const white = '#FFFFFF';
 export const monza = '#D0021B';
-
+export const black = '#030303';
