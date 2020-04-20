@@ -10,8 +10,11 @@ export default StyleSheet.create({
   circleAvatar: {
     borderRadius: 45,
     height: 45,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     width: 45,
+  },
+  textContainer: {
+    flex: 1,
   },
   textName: {
     color: black,
