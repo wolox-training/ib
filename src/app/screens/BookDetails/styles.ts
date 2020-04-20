@@ -4,8 +4,7 @@ import { polar } from '../../../constants/colors';
 export default StyleSheet.create({
   mainContainer: {
     backgroundColor: polar,
-    height: '100%',
+    flex: 1,
     padding: 20,
-    width: '100%',
   },
 });

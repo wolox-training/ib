@@ -5,8 +5,7 @@ export default StyleSheet.create({
   mainContainer: {
     backgroundColor: white,
     borderRadius: 5,
-    height: '100%',
+    flex: 1,
     padding: 15,
-    width: '100%',
   },
 });
