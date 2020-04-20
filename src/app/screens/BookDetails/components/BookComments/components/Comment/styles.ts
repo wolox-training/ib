@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { tundora, black } from 'src/constants/colors';
+import { AVATAR_SIZE } from './constants/constants';
 
 export default StyleSheet.create({
   mainContainer: {
@@ -8,10 +9,10 @@ export default StyleSheet.create({
     width: '100%',
   },
   circleAvatar: {
-    borderRadius: 45,
-    height: 45,
+    borderRadius: AVATAR_SIZE,
+    height: AVATAR_SIZE,
     resizeMode: 'cover',
-    width: 45,
+    width: AVATAR_SIZE,
   },
   textContainer: {
     flex: 1,
