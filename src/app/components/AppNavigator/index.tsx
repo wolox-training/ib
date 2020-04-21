@@ -20,10 +20,9 @@ function AppNavigator() {
         <Stack.Screen
           name={Routes.Details}
           component={BookDetails}
-          
           options={{
             headerBackground: () => <CustomHeader />,
-            headerLeft: () => <CustomBackButton />,
+            headerLeft: props => <CustomBackButton {...props}/>,
             headerTintColor: white,
             headerTitleAlign: Platform.OS == 'ios' ? 'center' : 'left',
           }}
