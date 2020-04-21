@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import { monza } from 'src/constants/colors';
 
 export default StyleSheet.create({
   image: {
