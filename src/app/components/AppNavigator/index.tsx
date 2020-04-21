@@ -2,13 +2,13 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import { Platform } from 'react-native';
 
+import CustomHeader from './components/CustomHeader';
+import CustomBackButton from './components/CustomBackButton';
 import Routes from 'src/constants/routes';
 import Books from 'src/app/screens/Books';
 import BookDetails from 'src/app/screens/BookDetails';
-import CustomHeader from './components/CustomHeader';
-import CustomBackButton from './components/CustomBackButton';
-import { Platform } from 'react-native';
 import { white } from 'src/constants/colors';
 
 const Stack = createStackNavigator();
