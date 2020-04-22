@@ -1,33 +1,28 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import { Platform } from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import CustomHeader from './components/CustomHeader';
-import CustomBackButton from './components/CustomBackButton';
-import Routes from 'src/constants/routes';
-import Books from 'src/app/screens/Books';
-import BookDetails from 'src/app/screens/BookDetails';
-import { white } from 'src/constants/colors';
+import TabBarIcon from './components/TabbarIcon';
+import {TABS, SCREENS} from './constants/constants';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Routes.Books}>
-        <Stack.Screen name={Routes.Books} component={Books} />
-        <Stack.Screen
-          name={Routes.Details}
-          component={BookDetails}
-          options={{
-            headerBackground: () => <CustomHeader />,
-            headerLeft: props => <CustomBackButton {...props}/>,
-            headerTintColor: white,
-            headerTitleAlign: Platform.OS == 'ios' ? 'center' : 'left',
-          }}
-        />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        {TABS.map((item) => (
+          <Tab.Screen
+            key={item}
+            name={item}
+            component={SCREENS[item]}
+            options={{
+              tabBarIcon: ({focused}) => <TabBarIcon route={item} focused={focused} />
+            }}
+          />
+        ))}
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
