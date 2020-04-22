@@ -1,11 +1,11 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {Image, View, TouchableHighlight} from 'react-native';
-import { StackHeaderLeftButtonProps } from '@react-navigation/stack';
+import {StackHeaderLeftButtonProps} from '@react-navigation/stack';
 
+import Spacer from 'src/app/components/Spacer';
 import styles from './styles';
 import backImg from './assets/ic_back.png';
-import Spacer from 'src/app/components/Spacer';
 
 function CustomBackButton(props: StackHeaderLeftButtonProps) {
   return (

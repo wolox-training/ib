@@ -11,6 +11,7 @@ import LibraryTabScreen from './components/LibraryTabScreen';
 import { BASE_OPTIONS } from './constants/constants';
 
 const Stack = createStackNavigator();
+
 function AppNavigator() {
   return (
     <NavigationContainer>
