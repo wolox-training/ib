@@ -2,12 +2,12 @@ import React from 'react';
 import {View, FlatList} from 'react-native';
 import BookCard from '../../components/BookCard';
 import styles from './styles';
-import Data from '../../../../assets/Books.json'
+import Data from '../../../../assets/Books.json';
 
 function Books({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
-  const renderItem = ({item}: any) =><BookCard book={item} navigation={navigation}/>;
-  const setId = (item: { id: string; }) => item.id;
+  const renderItem = ({item}: any) => <BookCard book={item} navigation={navigation} />;
+  const setId = (item: {id: string}) => item.id;
 
   return (
     <View style={styles.mainContainer}>
@@ -19,6 +19,6 @@ function Books({navigation}: any) {
       />
     </View>
   );
-};
+}
 
 export default Books;

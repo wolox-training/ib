@@ -1,6 +1,10 @@
 const Routes = {
-  Books: 'Books',
+  Library: 'Library',
   Details: 'Book Details',
+  Wishlist: 'Wishlist',
+  AddNew: 'Add New',
+  Rentals: 'Rentals',
+  Settings: 'Settings'
 };
 
 export default Routes;
