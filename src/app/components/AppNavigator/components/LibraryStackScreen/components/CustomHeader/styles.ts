@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {black} from 'src/constants/colors';
+import {TAB_ICON_SIZE} from './constants/constants';
 
 export default StyleSheet.create({
   image: {
@@ -8,8 +9,8 @@ export default StyleSheet.create({
     resizeMode: 'stretch'
   },
   icon: {
-    height: 20,
-    width: 20,
+    height: TAB_ICON_SIZE,
+    width: TAB_ICON_SIZE,
     backgroundColor: black
   }
 });
