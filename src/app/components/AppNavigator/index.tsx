@@ -1,28 +1,55 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import TabBarIcon from './components/TabbarIcon';
-import {TABS, SCREENS} from './constants/constants';
+import Routes from 'src/constants/routes';
+import CustomHeader from './components/LibraryTabScreen/components/CustomHeader';
+import CustomSearchButton from './components/LibraryTabScreen/components/CustomSearchButton';
+import { white } from 'src/constants/colors';
+import { Platform } from 'react-native';
+import BookDetails from 'src/app/screens/BookDetails';
+import CustomBackButton from './components/LibraryTabScreen/components/CustomBackButton';
+import Search from 'src/app/screens/Search';
+import LibraryTabScreen from './components/LibraryTabScreen';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 function AppNavigator() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        {TABS.map((item) => (
-          <Tab.Screen
-            key={item}
-            name={item}
-            component={SCREENS[item]}
-            options={{
-              tabBarIcon: ({focused}) => <TabBarIcon route={item} focused={focused} />
-            }}
-          />
-        ))}
-      </Tab.Navigator>
+      <Stack.Navigator initialRouteName={Routes.Library}>
+        <Stack.Screen 
+          name={Routes.Library}
+          component={LibraryTabScreen} 
+          options={{
+            headerBackground: () => <CustomHeader />,
+            headerRight: () => <CustomSearchButton />,
+            headerTintColor: white,
+            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
+          }}
+        />
+        <Stack.Screen
+          name={Routes.Details}
+          component={BookDetails}
+          options={{
+            headerBackground: () => <CustomHeader />,
+            headerLeft: (props) => <CustomBackButton {...props} />,
+            headerTintColor: white,
+            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
+          }}
+        />
+        <Stack.Screen
+          name={Routes.Search}
+          component={Search}
+          options={{
+            headerBackground: () => <CustomHeader />,
+            headerLeft: (props) => <CustomBackButton {...props} />,
+            headerTintColor: white,
+            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
