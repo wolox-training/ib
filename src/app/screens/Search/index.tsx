@@ -1,23 +1,22 @@
 import React from 'react';
 import {View, FlatList} from 'react-native';
-
-import BookCard from '../../components/BookCard';
 import styles from './styles';
-import {useSelector} from 'react-redux';
+import BookCard from 'src/app/components/BookCard';
+import { useNavigation } from '@react-navigation/native';
 
-function Books({navigation}: any) {
+function Search() {
+  const navigation = useNavigation();
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: any) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;
-
-  const library = useSelector((state: any) => state.book);
+  const foundedBooks: { id: string; }[] = [];
 
   return (
     <View style={styles.mainContainer}>
       <FlatList
-        data={library}
+        data={foundedBooks}
         renderItem={renderItem}
         keyExtractor={setId}
         ItemSeparatorComponent={renderSeparator}
@@ -26,4 +25,4 @@ function Books({navigation}: any) {
   );
 }
 
-export default Books;
+export default Search;
