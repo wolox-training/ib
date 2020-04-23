@@ -12,7 +12,7 @@ function Books({navigation}: any) {
   );
   const setId = (item: {id: string}) => item.id;
 
-  const library = useSelector((state: any) => state.book);
+  const library = useSelector((state: any) => state.books);
 
   return (
     <View style={styles.mainContainer}>
