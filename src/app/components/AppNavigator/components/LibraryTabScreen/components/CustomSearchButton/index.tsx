@@ -6,13 +6,12 @@ import { useNavigation } from '@react-navigation/native';
 import Spacer from 'src/app/components/Spacer';
 import styles from './styles';
 import backImg from './assets/ic_search.png';
-import Routes from 'src/constants/routes';
 
 function CustomSearchButton() {
   const navigation = useNavigation();
 
   const handleClick = () => {
-    navigation.navigate(Routes.Search);
+    navigation.navigate('Search');
   }
 
   return (
