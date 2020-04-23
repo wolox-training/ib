@@ -12,6 +12,7 @@ import BookDetails from 'src/app/screens/BookDetails';
 import CustomBackButton from './components/LibraryTabScreen/components/CustomBackButton';
 import Search from 'src/app/screens/Search';
 import LibraryTabScreen from './components/LibraryTabScreen';
+import { BASE_OPTIONS } from './constants/constants';
 
 const Stack = createStackNavigator();
 
@@ -23,31 +24,19 @@ function AppNavigator() {
           name={Routes.Library}
           component={LibraryTabScreen} 
           options={{
-            headerBackground: () => <CustomHeader />,
+            ...BASE_OPTIONS,
             headerRight: () => <CustomSearchButton />,
-            headerTintColor: white,
-            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
           }}
         />
         <Stack.Screen
           name={Routes.Details}
           component={BookDetails}
-          options={{
-            headerBackground: () => <CustomHeader />,
-            headerLeft: (props) => <CustomBackButton {...props} />,
-            headerTintColor: white,
-            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
-          }}
+          options={{...BASE_OPTIONS}}
         />
         <Stack.Screen
           name={Routes.Search}
           component={Search}
-          options={{
-            headerBackground: () => <CustomHeader />,
-            headerLeft: (props) => <CustomBackButton {...props} />,
-            headerTintColor: white,
-            headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
-          }}
+          options={{...BASE_OPTIONS}}
         />
       </Stack.Navigator>
     </NavigationContainer>
