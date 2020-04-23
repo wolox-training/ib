@@ -16,6 +16,7 @@ function Books({navigation}: any) {
   const library = useSelector((state: any) => state.book);
 =======
 import Data from '../../../../assets/Books.json';
+import { connect } from 'react-redux';
 
 function Books({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
@@ -35,4 +36,8 @@ function Books({navigation}: any) {
   );
 }
 
-export default Books;
+const mapStateToProps = (state: any) => ({
+  library: state.books
+})
+
+export default connect(mapStateToProps)(Books);
