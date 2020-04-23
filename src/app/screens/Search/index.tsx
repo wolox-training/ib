@@ -1,8 +1,12 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Image, Text} from 'react-native';
 import styles from './styles';
 import BookCard from 'src/app/components/BookCard';
 import { useNavigation } from '@react-navigation/native';
+import { SEARCH_TITLE, SEARCH_SUBTITLE } from './constants/constants';
+
+import SearchIcon from './assets/ic_search.png'
+import Spacer from 'src/app/components/Spacer';
 
 function Search() {
   const navigation = useNavigation();
@@ -15,12 +19,22 @@ function Search() {
 
   return (
     <View style={styles.mainContainer}>
-      <FlatList
-        data={foundedBooks}
-        renderItem={renderItem}
-        keyExtractor={setId}
-        ItemSeparatorComponent={renderSeparator}
-      />
+      {foundedBooks.length != 0 ? 
+            <FlatList
+            data={foundedBooks}
+            renderItem={renderItem}
+            keyExtractor={setId}
+            ItemSeparatorComponent={renderSeparator}
+          />
+          :
+          <View style={styles.noResults}>
+            <Image source={SearchIcon}/>
+            <Spacer height={20} />
+            <Text style={styles.title}>{SEARCH_TITLE}</Text>
+            <Spacer height={15} />
+            <Text style={styles.subtitle}>{SEARCH_SUBTITLE}</Text>
+          </View>
+      }
     </View>
   );
 }
