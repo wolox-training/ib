@@ -4,7 +4,8 @@ const Routes = {
   Wishlist: 'Wishlist',
   AddNew: 'Add New',
   Rentals: 'Rentals',
-  Settings: 'Settings'
+  Settings: 'Settings',
+  Search: 'Search'
 };
 
 export default Routes;

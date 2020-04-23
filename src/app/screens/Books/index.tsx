@@ -3,6 +3,7 @@ import {View, FlatList} from 'react-native';
 import BookCard from '../../components/BookCard';
 import styles from './styles';
 import Data from '../../../../assets/Books.json';
+import { connect } from 'react-redux';
 
 function Books({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
@@ -21,4 +22,8 @@ function Books({navigation}: any) {
   );
 }
 
-export default Books;
+const mapStateToProps = (state: any) => ({
+  library: state.books
+})
+
+export default connect(mapStateToProps)(Books);
