@@ -3,9 +3,10 @@ import {View, Text, Image, TouchableHighlight} from 'react-native';
 import {BookCardProps} from 'src/app/interfaces/bookCard';
 import styles from './styles';
 import defaultImg from './assets/img_book1.png';
+import Routes from 'src/constants/routes';
 
 function BookCard({book, navigation}: BookCardProps) {
-  const handleClick = () => navigation.navigate('Book Details', {book: book});
+  const handleClick = () => navigation.navigate(Routes.Details, {book: book});
   const source = book.image_url ? {uri: book.image_url} : defaultImg;
 
   return (
