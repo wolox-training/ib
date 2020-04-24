@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { white } from 'src/constants/colors';
-import { ICON_SIZE } from './constants/constants';
+import { SEARCH_ICON_SIZE, DELETE_ICON_SIZE } from './constants/constants';
 
 export default StyleSheet.create({
   mainContainer: {
@@ -12,8 +12,12 @@ export default StyleSheet.create({
     paddingHorizontal: 15,
   },
   searchIcon: {
-    height: ICON_SIZE,
-    width: ICON_SIZE,
+    height: SEARCH_ICON_SIZE,
+    width: SEARCH_ICON_SIZE,
+  },
+  deleteIcon: {
+    height: DELETE_ICON_SIZE,
+    width: DELETE_ICON_SIZE,
   },
   inputText: {
     flex: 1,
