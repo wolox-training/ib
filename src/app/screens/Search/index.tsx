@@ -2,12 +2,10 @@ import React from 'react';
 import {View, FlatList} from 'react-native';
 import styles from './styles';
 import BookCard from 'src/app/components/BookCard';
-import { useNavigation } from '@react-navigation/native';
 
 import Placeholder from './components/Placeholder';
 
-function Search() {
-  const navigation = useNavigation();
+function Search({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: any) => (
     <BookCard book={item} navigation={navigation} />
