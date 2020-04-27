@@ -1,18 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, FlatList} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
 
 import BookCard from '../../components/BookCard';
 import styles from './styles';
-import {useSelector} from 'react-redux';
+import {setBooks} from 'src/redux/Books/actions';
+import MyBooks from '../../../../assets/Books.json';
 
 function Books({navigation}: any) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setBooks(MyBooks));
+  }, []);
+
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: any) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;
 
-  const library = useSelector((state: any) => state.books);
+  const library = useSelector((state: any) => state.library.books);
 
   return (
     <View style={styles.mainContainer}>
