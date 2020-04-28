@@ -7,6 +7,7 @@ import styles from './styles';
 import {setBooks} from 'src/redux/Books/actions';
 import MyBooks from '../../../../assets/Books.json';
 import { State } from 'src/app/interfaces/state';
+import { RenderBookProps } from 'src/app/interfaces/book';
 
 function Books({navigation}: any) {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function Books({navigation}: any) {
   }, []);
 
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
-  const renderItem = ({item}: any) => (
+  const renderItem = ({item}: RenderBookProps) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;

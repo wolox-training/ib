@@ -6,6 +6,10 @@ export interface CommentProps {
   userComment: CommentData;
 }
 
+export interface RenderCommentProps {
+  item: CommentData;
+}
+
 export interface CommentData {
   id: string;
   user:  string;

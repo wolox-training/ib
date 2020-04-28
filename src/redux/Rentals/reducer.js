@@ -14,12 +14,11 @@ const rentals = (state = defaultState, action) => {
         }
       case actions.REMOVE_RENTAL: {
         const {books} = state;
-        const removeIndex = books.map(item => item.id).indexOf(action.book.id);
-        books.splice(removeIndex, 1);
+        const updatedRentals = books.filter((book) => book.id !== action.book.id);
 
         return {
           ...state,
-          books: [...books]
+          books: [...updatedRentals]
         };
       }
       default:
