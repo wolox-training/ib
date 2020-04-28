@@ -1,16 +1,12 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
+import currentQuery from './Search/reducer';
+import library from './Books/reducer';
 
-import Books from '../../assets/Books.json'; // TODO delete
+const reducers = combineReducers({
+  currentQuery,
+  library
+});
 
-const initialState = {
-  selectedBooks: [],
-  books: Books,
-}
-
-function rootReducer(state = initialState, action) {
-  return state;
-}
-
-const store = createStore(rootReducer);
+const store = createStore(reducers);
 
 export default store;
