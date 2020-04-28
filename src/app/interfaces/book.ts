@@ -3,7 +3,7 @@ export interface BookProps {
 }
 
 export interface BookData {
-  id: number;
+  id: string;
   author: string;
   title: string;
   genre: string;

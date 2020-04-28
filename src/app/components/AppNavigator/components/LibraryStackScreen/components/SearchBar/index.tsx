@@ -20,14 +20,14 @@ function SearchBar() {
     inputRef.current && inputRef.current.clear();
   }
 
-  const handleChange = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
-    dispatch(setQuery(e.nativeEvent.text));
+  const handleChange = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
+    dispatch(setQuery(event.nativeEvent.text));
   }
 
   return (
     <View style={styles.mainContainer}>
       <Image source={SearchIcon} style={styles.searchIcon}/>
-      <TextInput ref={inputRef} style={styles.inputText} onChange={(e) => handleChange(e)}/>
+      <TextInput ref={inputRef} style={styles.inputText} onChange={handleChange}/>
       <TouchableHighlight onPress={handleClick}>
         <Image source={DeleteIcon} style={styles.deleteIcon}/>
       </TouchableHighlight>

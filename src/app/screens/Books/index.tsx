@@ -6,6 +6,7 @@ import BookCard from '../../components/BookCard';
 import styles from './styles';
 import {setBooks} from 'src/redux/Books/actions';
 import MyBooks from '../../../../assets/Books.json';
+import { State } from 'src/app/interfaces/state';
 
 function Books({navigation}: any) {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function Books({navigation}: any) {
   );
   const setId = (item: {id: string}) => item.id;
 
-  const library = useSelector((state: any) => state.library.books);
+  const library = useSelector((state: State) => state.library.books);
 
   return (
     <View style={styles.mainContainer}>
