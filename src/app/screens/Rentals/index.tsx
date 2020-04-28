@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux';
 
 import BookCard from '../../components/BookCard';
 import styles from './styles';
+import { State } from 'src/app/interfaces/state';
 
 function Rentals({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
@@ -12,7 +13,7 @@ function Rentals({navigation}: any) {
   );
   const setId = (item: {id: string}) => item.id;
 
-  const rentedBooks = useSelector((state: any) => state.rentals.books);
+  const rentedBooks = useSelector((state: State) => state.rentals.books);
 
   return (
     <View style={styles.mainContainer}>

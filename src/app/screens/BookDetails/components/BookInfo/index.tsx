@@ -10,10 +10,11 @@ import SecondaryButton from 'src/app/components/SecondaryButton';
 import Spacer from 'src/app/components/Spacer';
 import defaultImg from './assets/img_book1.png';
 import {addRental, removeRental} from '../../../../../redux/Rentals/actions';
+import { State } from 'src/app/interfaces/state';
 
 function BookInfo({book}: BookProps) {
   const dispatch = useDispatch();
-  const rentedBooks = useSelector((state: any) => state.rentals.books);
+  const rentedBooks = useSelector((state: State) => state.rentals.books);
 
   const source = book.image_url ? {uri: book.image_url} : defaultImg;
   const founded = rentedBooks.filter((rentedBook: BookData) => rentedBook.title === book.title).length > 0;
