@@ -1,14 +1,30 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, TouchableHighlight} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+
+import { BookData } from 'src/app/interfaces/book';
 import styles from './styles';
 import {BookProps} from 'src/app/interfaces/book';
 import PrimaryButton from 'src/app/components/PrimaryButton';
 import SecondaryButton from 'src/app/components/SecondaryButton';
 import Spacer from 'src/app/components/Spacer';
 import defaultImg from './assets/img_book1.png';
+import {addRental, removeRental} from '../../../../../redux/Rentals/actions';
 
 function BookInfo({book}: BookProps) {
+  const dispatch = useDispatch();
+  const rentedBooks = useSelector((state: any) => state.rentals.books);
+
   const source = book.image_url ? {uri: book.image_url} : defaultImg;
+  const founded = rentedBooks.filter((rentedBook: BookData) => rentedBook.title === book.title).length > 0;
+
+  const handleRent = () => {
+    if(founded){
+      dispatch(removeRental(book));
+    } else {
+      dispatch(addRental(book));
+    }
+  };
 
   return (
     <View style={styles.mainContainer}>
@@ -26,7 +42,9 @@ function BookInfo({book}: BookProps) {
       <View style={styles.buttonsPanel}>
         <PrimaryButton />
         <Spacer height={10} />
-        <SecondaryButton />
+        <TouchableHighlight onPress={handleRent}>
+          <SecondaryButton rented={founded} />
+        </TouchableHighlight>
       </View>
     </View>
   );
