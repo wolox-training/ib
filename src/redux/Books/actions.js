@@ -1,4 +1,6 @@
+export const actions = {SET_BOOKS: 'SET_BOOKS'};
+
 export const setBooks = books => ({
-    type: "SET_BOOKS",
+    type: actions.SET_BOOKS,
     books
 })

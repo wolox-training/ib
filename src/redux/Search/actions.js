@@ -1,4 +1,6 @@
+export const actions = {SET_QUERY: "SET_QUERY"};
+
 export const setQuery = query => ({
-    type: "SET_QUERY",
+    type: actions.SET_QUERY,
     query
 })

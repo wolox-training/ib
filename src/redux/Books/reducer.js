@@ -1,4 +1,5 @@
 import Books from '../../../assets/Books.json';
+import {actions} from './actions';
 
 const defaultState = {
   books: Books
@@ -6,7 +7,7 @@ const defaultState = {
 
 const library = (state = defaultState, action) => {
   switch(action.type){
-      case "SET_BOOKS": {
+      case actions.SET_BOOKS: {
           return {
             ...state,
             books: action.books

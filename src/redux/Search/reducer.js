@@ -1,3 +1,5 @@
+import {actions} from './actions';
+
 const defaultState = {
   selectedBooks: [],
   query: '',
@@ -5,7 +7,7 @@ const defaultState = {
 
 const currentQuery = (state = defaultState, action) => {
   switch(action.type){
-      case "SET_QUERY": {
+      case actions.SET_QUERY: {
           return {
             ...state,
             query: action.query
