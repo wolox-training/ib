@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
 
-function SecondaryButton({active = false}) {
+function SecondaryButton({rented = false}) {
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.text}>RENT</Text>
+      <Text style={styles.text}>{rented ? 'RETURN BOOK' : 'RENT'}</Text>
     </View>
   );
 };

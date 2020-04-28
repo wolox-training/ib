@@ -1,5 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
+
 import styles from './styles';
 import BookInfo from './components/BookInfo';
 import {BookDetailsProps} from 'src/app/interfaces/bookDetails';
