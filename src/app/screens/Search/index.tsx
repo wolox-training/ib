@@ -3,30 +3,34 @@ import {View, FlatList} from 'react-native';
 import styles from './styles';
 import BookCard from 'src/app/components/BookCard';
 
-import Books from '../../../../assets/Books.json';
-
 import Placeholder from './components/Placeholder';
 import { useSelector } from 'react-redux';
 import { BookData } from 'src/app/interfaces/book';
 
 function Search({navigation}: any) {
   const query = useSelector((state: any) => state.currentQuery.query);
+  const books = useSelector((state: any) => state.library.books);
 
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: any) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;
-  const foundedBooks = query ? Books.filter((book: BookData) => {
-    return book.author.toLowerCase().includes((query).toLowerCase()) ||
-           book.title.toLowerCase().includes((query).toLowerCase()) ||
-           book.genre.toLowerCase().includes((query).toLowerCase()) ||
-           book.year.toLowerCase().includes((query).toLowerCase());
-  }) : null;
+
+  const findBooks = (query = '') => {
+    const lookAt = ['author', 'title', 'genre', 'year'];
+    return books.filter((book: BookData) => 
+      lookAt.some(key => 
+        (book[key as keyof BookData] as String).toLowerCase().includes((query).toLowerCase())
+      )
+    );
+  };
+
+  const foundedBooks = findBooks(query);
 
   return (
     <View style={styles.mainContainer}>
-      {foundedBooks ? 
+      {foundedBooks.length ? 
             <FlatList
             data={foundedBooks}
             renderItem={renderItem}
