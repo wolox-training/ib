@@ -1,32 +1,25 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, FlatList} from 'react-native';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 import BookCard from '../../components/BookCard';
 import styles from './styles';
-import {setBooks} from 'src/redux/Books/actions';
-import MyBooks from '../../../../assets/Books.json';
 import { State } from 'src/app/interfaces/state';
 import { RenderBookProps } from 'src/app/interfaces/book';
 
-function Books({navigation}: any) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setBooks(MyBooks));
-  }, []);
-
+function Rentals({navigation}: any) {
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
   const renderItem = ({item}: RenderBookProps) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;
 
-  const library = useSelector((state: State) => state.library.books);
+  const rentedBooks = useSelector((state: State) => state.rentals.books);
 
   return (
     <View style={styles.mainContainer}>
       <FlatList
-        data={library}
+        data={rentedBooks}
         renderItem={renderItem}
         keyExtractor={setId}
         ItemSeparatorComponent={renderSeparator}
@@ -35,4 +28,4 @@ function Books({navigation}: any) {
   );
 }
 
-export default Books;
+export default Rentals;

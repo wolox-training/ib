@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import styles from './styles';
 import BookCard from 'src/app/components/BookCard';
 import Placeholder from './components/Placeholder';
-import { BookData } from 'src/app/interfaces/book';
+import { BookData, RenderBookProps } from 'src/app/interfaces/book';
 import { State } from 'src/app/interfaces/state';
 import { LOOK_AT_KEYS } from './constants/constants';
 
@@ -14,7 +14,7 @@ function Search({navigation}: any) {
   const books = useSelector((state: State) => state.library.books);
 
   const renderSeparator = () => <View style={styles.bookCardSeparator} />;
-  const renderItem = ({item}: any) => (
+  const renderItem = ({item}: RenderBookProps) => (
     <BookCard book={item} navigation={navigation} />
   );
   const setId = (item: {id: string}) => item.id;
