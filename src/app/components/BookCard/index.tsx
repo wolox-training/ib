@@ -7,8 +7,8 @@ import defaultImg from './assets/img_book1.png';
 import Routes from 'src/constants/routes';
 
 function BookCard({book, navigation}: BookCardProps) {
-  const handleClick = () => navigation.navigate(Routes.Details, {book: book});
-  const source = book.image_url ? {uri: book.image_url} : defaultImg;
+  const handleClick = () => navigation.navigate(Routes.Details, {bookId: book.id});
+  const source = book.image ? {uri: book.image} : defaultImg;
 
   return (
     <TouchableHighlight onPress={handleClick}>

@@ -1,10 +1,13 @@
 import {actions} from './actions';
+import {BookData} from '../../app/interfaces/book';
 
 const defaultState = {
-  books: [],
+  books:[],
+} as {
+  books: BookData[];
 };
 
-const rentals = (state = defaultState, action) => {
+const rentals = (state = defaultState, action: any) => {
   switch(action.type){
       case actions.ADD_RENTAL: {
           return {

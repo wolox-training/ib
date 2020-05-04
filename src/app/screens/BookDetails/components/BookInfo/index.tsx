@@ -16,7 +16,7 @@ function BookInfo({book}: BookProps) {
   const dispatch = useDispatch();
   const rentedBooks = useSelector((state: State) => state.rentals.books);
 
-  const source = book.image_url ? {uri: book.image_url} : defaultImg;
+  const source = book.image ? {uri: book.image} : defaultImg;
   const founded = rentedBooks.filter((rentedBook: BookData) => rentedBook.title === book.title).length > 0;
 
   const handleRent = () => {
