@@ -11,19 +11,21 @@ const library = (state = defaultState, action: any) => {
     case actions.SET_BOOKS: {
       return {
         ...state,
-        loading: true
+        loading: false
       };
     }
     case actions.SET_BOOKS_SUCCESS: {
       return {
         ...state,
-        books: action.books
+        books: action.books,
+        loading: false
       };
     }
     case actions.SET_BOOKS_FAILURE: {
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       };
     }
     default:

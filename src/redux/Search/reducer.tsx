@@ -4,7 +4,7 @@ const defaultState = {
   query: '',
 };
 
-const currentQuery = (state = defaultState, action) => {
+const currentQuery = (state = defaultState, action: any) => {
   switch(action.type){
       case actions.SET_QUERY: {
           return {

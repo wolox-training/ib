@@ -17,13 +17,16 @@ const book = (state = defaultState, action: any) => {
     case actions.GET_DETAILS_SUCCESS: {
       return {
         ...state,
-        details: action.details
+        details: action.details,
+        loading: false
+        
       };
     }
     case actions.GET_DETAILS_FAILURE: {
       return {
         ...state,
-        error: action.error
+        error: action.error,
+        loading: false
       };
     }
     default:
