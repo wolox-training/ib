@@ -79,3 +79,4 @@ package-lock.json
 package.json
 tsconfig.json
 yarn.lock
+.env

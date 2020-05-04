@@ -13,5 +13,5 @@ export interface BookData {
   genre: string;
   publisher: string;
   year: string;
-  image_url: string;
+  image: string;
 }
