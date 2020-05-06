@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { BookData } from 'src/app/interfaces/book';
 import styles from './styles';
 import {BookProps} from 'src/app/interfaces/book';
-import PrimaryButton from 'src/app/components/PrimaryButton';
+import CustomButton from 'src/app/components/CustomButton';
 import SecondaryButton from 'src/app/components/SecondaryButton';
 import Spacer from 'src/app/components/Spacer';
 import defaultImg from './assets/img_book1.png';
@@ -41,7 +41,7 @@ function BookInfo({book}: BookProps) {
         </View>
       </View>
       <View style={styles.buttonsPanel}>
-        <PrimaryButton />
+        <CustomButton title='ADD TO WISHLIST' />
         <Spacer height={10} />
         <TouchableHighlight onPress={handleRent}>
           <SecondaryButton rented={founded} />

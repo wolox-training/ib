@@ -5,7 +5,8 @@ const Routes = {
   AddNew: 'Add New',
   Rentals: 'Rentals',
   Settings: 'Settings',
-  Search: 'Search'
+  Search: 'Search',
+  Login: 'Login',
 };
 
 export default Routes;
