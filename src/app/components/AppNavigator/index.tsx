@@ -5,12 +5,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import { SCREENS, TABS } from './constants/constants';
 import TabBarIcon from './components/TabbarIcon';
+import { navigationRef } from './components/RootNavigation';
 
 const Tab = createBottomTabNavigator();
 
 function AppNavigator() {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Tab.Navigator>
         {TABS.map((item) => (
           <Tab.Screen
