@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { cerulean } from 'src/constants/colors';
+import { cerulean, white } from 'src/constants/colors';
 
 export default StyleSheet.create({
   mainContainer: {
@@ -16,5 +16,9 @@ export default StyleSheet.create({
     height: '100%',
     textAlignVertical: 'center',
     textAlign: 'center',
+  },
+  white: {
+    borderColor: white,
+    color: white,
   }
 });

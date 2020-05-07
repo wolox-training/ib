@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 import styles from './styles';
 import SearchIcon from './assets/ic_search.png';
 import DeleteIcon from './assets/ic_delete.png';
-import {setQuery} from '../../../../../../../redux/Search/actions';
+import { setQuery } from 'src/redux/Search/actions';
 
 function SearchBar() {
   const dispatch = useDispatch();
