@@ -1,13 +1,12 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import { createSwitchNavigator , createAppContainer} from 'react-navigation';
+import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 
-import { navigationRef } from './components/RootNavigation';
 import Routes from 'src/constants/routes';
 import Login from 'src/app/screens/Login';
+import {navigationRef} from './components/RootNavigation';
 import AppNavigator from './components/AppNavigator';
-
 
 const Switch = createAppContainer(
   createSwitchNavigator(
@@ -17,6 +16,7 @@ const Switch = createAppContainer(
     },
     {
       initialRouteName: Routes.Login,
+      backBehavior: 'initialRoute'
     }
   )
 );
