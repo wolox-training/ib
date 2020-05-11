@@ -15,8 +15,7 @@ const Switch = createAppContainer(
       [Routes.Library]: AppNavigator
     },
     {
-      initialRouteName: Routes.Login,
-      backBehavior: 'initialRoute'
+      initialRouteName: Routes.Login
     }
   )
 );

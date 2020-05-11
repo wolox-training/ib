@@ -6,5 +6,5 @@ import CustomHeader from '../components/CustomHeader';
 export const BASE_OPTIONS = {
   headerBackground: CustomHeader,
   headerTintColor: white,
-  headerTitleAlign: Platform.OS === 'ios' ? 'left' : 'center'
+  headerTitleAlign: Platform.OS === 'ios' ? 'center' : 'left'
 } as StackNavigationOptions;

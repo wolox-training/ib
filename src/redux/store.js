@@ -1,13 +1,12 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+import {createLogger} from 'redux-logger';
 
 import currentQuery from './Search/reducer';
 import currentUser from './Auth/reducer';
 import library from './Books/reducer';
 import rentals from './Rentals/reducer';
 import book from './Book/reducer';
-
 
 const logger = createLogger();
 
