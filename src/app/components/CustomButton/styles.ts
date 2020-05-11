@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { cerulean, white } from 'src/constants/colors';
+import { cerulean, white, black, tundora } from 'src/constants/colors';
 
 export default StyleSheet.create({
   mainContainer: {
@@ -20,5 +20,11 @@ export default StyleSheet.create({
   white: {
     borderColor: white,
     color: white,
+  },
+  disable: {
+    backgroundColor: tundora
+  },
+  disabledText: {
+    color: black
   }
 });

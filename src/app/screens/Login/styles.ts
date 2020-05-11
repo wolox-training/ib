@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { white, black } from 'src/constants/colors';
+import { white, black, monza } from 'src/constants/colors';
 
 export default StyleSheet.create({
   mainContainer: {
@@ -25,5 +25,8 @@ export default StyleSheet.create({
   },
   inputTitle: {
     fontWeight: 'bold'
+  },
+  error: {
+    color: monza
   }
 });

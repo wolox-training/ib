@@ -1,8 +1,8 @@
-import 'react-native-gesture-handler';
 import React from 'react';
-import Navigator from './components/GeneralNavigator';
 import {Provider} from 'react-redux';
+import 'react-native-gesture-handler';
 
+import Navigator from './components/GeneralNavigator';
 import store from '../redux/store';
 
 function App() {
@@ -11,6 +11,6 @@ function App() {
       <Navigator />
     </Provider>
   );
-};
+}
 
 export default App;

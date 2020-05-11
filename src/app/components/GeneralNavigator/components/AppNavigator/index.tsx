@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import { SCREENS, TABS } from './constants/constants';
+import {SCREENS, TABS} from './constants/constants';
 import TabBarIcon from './components/TabbarIcon';
 
 const Tab = createBottomTabNavigator();
@@ -16,9 +16,7 @@ function AppNavigator() {
           name={item}
           component={SCREENS[item]}
           options={{
-            tabBarIcon: ({focused}) => (
-              <TabBarIcon route={item} focused={focused} />
-            )
+            tabBarIcon: ({focused}) => <TabBarIcon route={item} focused={focused} />
           }}
         />
       ))}
