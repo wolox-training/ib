@@ -10,7 +10,6 @@ import backImg from './assets/ic_search.png';
 
 function CustomSearchButton() {
   const navigation = useNavigation();
-
   const handleClick = () => navigation.navigate(Routes.Search);
 
   return (

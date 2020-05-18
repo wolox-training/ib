@@ -19,7 +19,6 @@ const book = (state = defaultState, action: any) => {
         ...state,
         details: action.details,
         loading: false
-        
       };
     }
     case actions.GET_DETAILS_FAILURE: {

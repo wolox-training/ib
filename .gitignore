@@ -63,20 +63,7 @@ buck-out/
 /ios/Pods/
 
 # Ivo Custom
-__tests__
-assets
-ios
-android
-.buckconfig
-.eslintrc.js
-.prettierrc.js
-.watchmanconfig
-app.json
-babel.config.js
-index.js
-metro.config.js
-package-lock.json
-package.json
-tsconfig.json
-yarn.lock
+assets/general
+assets/nav_bar
+assets/tool_bar
 .env
