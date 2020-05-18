@@ -18,6 +18,7 @@ function SearchBar() {
 
   const handleClick = () => {
     inputRef.current && inputRef.current.clear();
+    dispatch(setQuery(''));
   }
 
   const handleChange = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {

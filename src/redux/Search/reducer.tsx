@@ -1,20 +1,16 @@
+import {createReducer, completeReducer} from 'redux-recompose';
+
 import {actions} from './actions';
 
-const defaultState = {
-  query: '',
+const initialState = {
+  query: ''
 };
 
-const currentQuery = (state = defaultState, action: any) => {
-  switch(action.type){
-      case actions.SET_QUERY: {
-          return {
-            ...state,
-            query: action.query
-          };
-        }
-      default:
-        return state;
-  }
+const reducerDescription = {
+  [actions.SET_QUERY]: (state, action) => ({
+    ...state,
+    [action.target]: action.payload
+  })
 }
 
-export default currentQuery;
+export default createReducer(initialState, reducerDescription);

@@ -20,28 +20,24 @@ function Search({navigation}: any) {
   const setId = (item: {id: string}) => item.id;
 
   const findBooks = (query = '') => {
-    return books.filter((book: BookData) => 
+    return query ? books.filter((book: BookData) => 
       LOOK_AT_KEYS.some(key => 
         (book[key as keyof BookData] as string).toLowerCase().includes((query).toLowerCase())
       )
-    );
+    ) : [];
   };
 
   const foundedBooks = findBooks(query);
 
   return (
     <View style={styles.mainContainer}>
-      {foundedBooks.length ? 
-            <FlatList
-            data={foundedBooks}
-            renderItem={renderItem}
-            keyExtractor={setId}
-            ItemSeparatorComponent={renderSeparator}
-          />
-          :
-          <Placeholder />
-      }
-
+      <FlatList
+        data={foundedBooks}
+        renderItem={renderItem}
+        keyExtractor={setId}
+        ItemSeparatorComponent={renderSeparator}
+        ListEmptyComponent={<Placeholder />}
+      />
     </View>
   );
 }

@@ -1,32 +1,29 @@
 import {actions} from './actions';
 import {BookData} from '../../app/interfaces/book';
 
-const defaultState = {
+import {createReducer} from 'redux-recompose';
+
+const initialState = {
   books:[],
 } as {
   books: BookData[];
 };
 
-const rentals = (state = defaultState, action: any) => {
-  switch(action.type){
-      case actions.ADD_RENTAL: {
-          return {
-            ...state,
-            books: [...state.books, action.book]
-          };
-        }
-      case actions.REMOVE_RENTAL: {
-        const {books} = state;
-        const updatedRentals = books.filter((book) => book.id !== action.book.id);
+const addRental = (state, action) => ({ ...state, [action.target]: [...state.books, action.payload] });
 
-        return {
-          ...state,
-          books: [...updatedRentals]
-        };
-      }
-      default:
-        return state;
-  }
+const removeRental = (state, action) => {
+  const {books} = state;
+  const updatedRentals = books.filter((book) => book.id !== action.payload.id);
+
+  return {
+    ...state,
+    [action.target]: [...updatedRentals]
+  };
+};
+
+const reducerDescription = {
+  [actions.ADD_RENTAL]: (state, action) => addRental(state, action),
+  [actions.REMOVE_RENTAL]: (state, action) => removeRental(state, action)
 }
 
-export default rentals;
+export default createReducer(initialState, reducerDescription);

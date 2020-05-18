@@ -9,22 +9,14 @@ export const actions = createTypes(
 );
 
 const actionCreators = {
-  loginUser: (user: UserForm) => async (dispatch: any) => {
-    dispatch({type: actions.LOGIN_USER});
-    const response = await login(user);
-    if (response.ok) {
-      AsyncStorage.setItem('access-token', response.headers['access-token']);
-      dispatch({
-        type: actions.LOGIN_USER_SUCCESS,
-        user: response.data.data
-      });
-    } else {
-      dispatch({
-        type: actions.LOGIN_USER_FAILURE,
-        error: response.problem
-      });
-    }
-  },
+  loginUser: (user: UserForm) => ({
+    type: actions.LOGIN_USER,
+    target: 'user',
+    service: login,
+    payload: user,
+    successSelector: response => response.data.data,
+    failureSelector: response => response.problem
+  }),
   logoutUser: () => (dispatch: any) => {
     AsyncStorage.removeItem('access-token');
     dispatch({
@@ -34,8 +26,3 @@ const actionCreators = {
 };
 
 export default actionCreators;
-
-
-{
-
-}
