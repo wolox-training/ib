@@ -1,17 +1,17 @@
-import {createTypes, createThunkAction} from 'redux-recompose';
+import {createTypes, completeTypes} from 'redux-recompose';
 
 import {getBooks as getBooksFromApi} from 'src/services/booksService';
 
-export const actions = createTypes(['SET_BOOKS', 'SET_BOOKS_SUCCESS', 'SET_BOOKS_FAILURE'], '@@BOOKS');
+export const actions = createTypes(completeTypes(['SET_BOOKS']), '@@BOOKS');
 
 const actionCreators = {
   getBooks: () => ({
     type: actions.SET_BOOKS,
     target: 'books',
     service: getBooksFromApi,
-    successSelector: response => response.data.page,
-    failureSelector: response => response.problem
-  }),
+    successSelector: (response) => response.data.page,
+    failureSelector: (response) => response.problem
+  })
 };
 
 export default actionCreators;

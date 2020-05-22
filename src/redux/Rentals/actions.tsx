@@ -1,13 +1,15 @@
-export const actions = {ADD_RENTAL: "ADD_RENTAL", REMOVE_RENTAL: "REMOVE_RENTAL"};
+import {createTypes, completeTypes} from 'redux-recompose';
 
-export const addRental = book => ({
-    type: actions.ADD_RENTAL,
-    target: 'book',
-    payload: book
-})
+export const actions = createTypes(completeTypes([], ['ADD_RENTAL', 'REMOVE_RENTAL']), '@@RENTALS');
 
-export const removeRental = book => ({
-    type: actions.REMOVE_RENTAL,
-    target: 'book',
-    payload: book
-})
+export const addRental = (book) => ({
+  type: actions.ADD_RENTAL,
+  target: 'books',
+  payload: book
+});
+
+export const removeRental = (book) => ({
+  type: actions.REMOVE_RENTAL,
+  target: 'books',
+  payload: book
+});

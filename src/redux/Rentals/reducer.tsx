@@ -1,15 +1,14 @@
+import {createReducer} from 'redux-recompose';
 import {actions} from './actions';
 import {BookData} from '../../app/interfaces/book';
 
-import {createReducer} from 'redux-recompose';
-
 const initialState = {
-  books:[],
+  books: []
 } as {
   books: BookData[];
 };
 
-const addRental = (state, action) => ({ ...state, [action.target]: [...state.books, action.payload] });
+const addRental = (state, action) => ({...state, [action.target]: [...state.books, action.payload]});
 
 const removeRental = (state, action) => {
   const {books} = state;
@@ -24,6 +23,6 @@ const removeRental = (state, action) => {
 const reducerDescription = {
   [actions.ADD_RENTAL]: (state, action) => addRental(state, action),
   [actions.REMOVE_RENTAL]: (state, action) => removeRental(state, action)
-}
+};
 
 export default createReducer(initialState, reducerDescription);

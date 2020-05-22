@@ -11,8 +11,8 @@ const initialState = completeState(stateDescription);
 const reducerDescription = {
   primaryActions: [actions.LOGIN_USER],
   override: {
-    [actions.LOGOUT_USER]: () => initialState,
+    [actions.LOGOUT_USER]: () => initialState
   }
-}
+};
 
 export default createReducer(initialState, completeReducer(reducerDescription));

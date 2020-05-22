@@ -1,4 +1,4 @@
-import {createReducer, completeReducer} from 'redux-recompose';
+import {createReducer} from 'redux-recompose';
 
 import {actions} from './actions';
 
@@ -11,6 +11,6 @@ const reducerDescription = {
     ...state,
     [action.target]: action.payload
   })
-}
+};
 
 export default createReducer(initialState, reducerDescription);

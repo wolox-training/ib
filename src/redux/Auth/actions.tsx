@@ -1,12 +1,9 @@
-import {createTypes} from 'redux-recompose';
+import {createTypes, completeTypes} from 'redux-recompose';
 import {UserForm} from 'src/app/interfaces/user';
 import {login} from 'src/services/auth';
 import AsyncStorage from '@react-native-community/async-storage';
 
-export const actions = createTypes(
-  ['LOGIN_USER', 'LOGIN_USER_SUCCESS', 'LOGIN_USER_FAILURE', 'LOGOUT_USER'],
-  '@@USER'
-);
+export const actions = createTypes(completeTypes(['LOGIN_USER'], ['LOGOUT_USER']), '@@USER');
 
 const actionCreators = {
   loginUser: (user: UserForm) => ({
@@ -14,8 +11,11 @@ const actionCreators = {
     target: 'user',
     service: login,
     payload: user,
-    successSelector: response => response.data.data,
-    failureSelector: response => response.problem
+    successSelector: (response) => {
+      AsyncStorage.setItem('access-token', response.headers['access-token']);
+      return response.data.data;
+    },
+    failureSelector: (response) => response.problem
   }),
   logoutUser: () => (dispatch: any) => {
     AsyncStorage.removeItem('access-token');
