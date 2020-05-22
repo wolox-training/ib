@@ -1,39 +1,18 @@
+import {createReducer, completeReducer, completeState} from 'redux-recompose';
+
 import {actions} from './actions';
 
-const defaultState = {
-  user: {},
-  loading: false,
-  error: ''
+const stateDescription = {
+  user: {}
 };
 
-const currentUser = (state = defaultState, action: any) => {
-  switch (action.type) {
-    case actions.LOGIN_USER: {
-      return {
-        ...state,
-        loading: false
-      };
-    }
-    case actions.LOGIN_USER_SUCCESS: {
-      return {
-        ...state,
-        user: action.user,
-        loading: false
-      };
-    }
-    case actions.LOGIN_USER_FAILURE: {
-      return {
-        ...state,
-        error: action.error,
-        loading: false
-      };
-    }
-    case actions.LOGOUT_USER: {
-      return defaultState;
-    }
-    default:
-      return state;
+const initialState = completeState(stateDescription);
+
+const reducerDescription = {
+  primaryActions: [actions.LOGIN_USER],
+  override: {
+    [actions.LOGOUT_USER]: () => initialState
   }
 };
 
-export default currentUser;
+export default createReducer(initialState, completeReducer(reducerDescription));

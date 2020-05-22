@@ -1,0 +1,56 @@
+﻿[
+   {
+      "id":1,
+      "user":"Emmie Thiel",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg"
+   },
+   {
+      "id":2,
+      "user":"Christopher Pike",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/content.jpeg"
+   },
+   {
+      "id":3,
+      "user":"Lois Duncan",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg"
+   },
+   {
+      "id":4,
+      "user":"Christopher Pike",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg"
+   },
+   {
+      "id":5,
+      "user":"Christopher Pike",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/6963511-M.jpg"
+   },
+   {
+      "id":6,
+      "user":"Paula Hawkins",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap: Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/content.jpeg"
+   },
+   {
+      "id":7,
+      "user":"Anthony Doerr",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/content.jpeg"
+   },
+   {
+      "id":8,
+      "user":"John Katzenbach",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg"
+   },
+   {
+      "id":9,
+      "user":"Andy Weir",
+      "comment": "Test comment, this is mocked data, great book tho. Recommended :clap: :clap:",
+      "userImgUrl":"http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg"
+   }
+]

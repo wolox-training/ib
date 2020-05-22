@@ -1,4 +1,5 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import { fetchMiddleware } from 'redux-recompose';
 import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 
@@ -18,7 +19,7 @@ const reducers = combineReducers({
   book
 });
 
-const middlewares = [thunk, logger];
+const middlewares = [thunk, logger, fetchMiddleware];
 const enhancers = [];
 enhancers.push(applyMiddleware(...middlewares));
 

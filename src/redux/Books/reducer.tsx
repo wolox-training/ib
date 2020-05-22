@@ -1,36 +1,15 @@
+import {createReducer, completeReducer, completeState} from 'redux-recompose';
+
 import {actions} from './actions';
 
-const defaultState = {
-  books: [],
-  loading: false,
-  error: ''
+const stateDescription = {
+  books: []
 };
 
-const library = (state = defaultState, action: any) => {
-  switch (action.type) {
-    case actions.SET_BOOKS: {
-      return {
-        ...state,
-        loading: false
-      };
-    }
-    case actions.SET_BOOKS_SUCCESS: {
-      return {
-        ...state,
-        books: action.books,
-        loading: false
-      };
-    }
-    case actions.SET_BOOKS_FAILURE: {
-      return {
-        ...state,
-        error: action.error,
-        loading: false
-      };
-    }
-    default:
-      return state;
-  }
-};
+const initialState = completeState(stateDescription);
 
-export default library;
+const reducerDescription = {
+  primaryActions: [actions.SET_BOOKS]
+}
+
+export default createReducer(initialState, completeReducer(reducerDescription));

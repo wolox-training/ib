@@ -1,6 +1,9 @@
-export const actions = {SET_QUERY: "SET_QUERY"};
+import {createTypes, completeTypes} from 'redux-recompose';
+
+export const actions = createTypes(completeTypes([], ['SET_QUERY']), '@@SEARCH');
 
 export const setQuery = (query: string) => ({
-    type: actions.SET_QUERY,
-    query
-})
+  type: actions.SET_QUERY,
+  target: 'query',
+  payload: query
+});
