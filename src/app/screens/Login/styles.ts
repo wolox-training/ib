@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import { white, black, monza } from 'src/constants/colors';
+import {white, black, monza} from 'src/constants/colors';
 
 export default StyleSheet.create({
   mainContainer: {
     height: '100%',
-    width: '100%',
+    width: '100%'
   },
   background: {
     width: '100%',
