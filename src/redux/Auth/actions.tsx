@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 export const actions = createTypes(completeTypes(['LOGIN_USER'], ['LOGOUT_USER']), '@@USER');
 
-const actionCreators = {
+export const actionCreators = {
   loginUser: (user: UserForm) => ({
     type: actions.LOGIN_USER,
     target: 'user',
